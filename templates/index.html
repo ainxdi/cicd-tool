@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tasks</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="sheet">
+    <header>
+      <h1>Tasks</h1>
+      <p id="summary" class="summary" aria-live="polite"></p>
+    </header>
+
+    <form id="add-form" class="add" autocomplete="off">
+      <label for="title" class="visually-hidden">New task</label>
+      <input id="title" name="title" maxlength="120" placeholder="Add a task" required>
+      <button type="submit">Add task</button>
+    </form>
+
+    <p id="message" class="message" role="alert" hidden></p>
+
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty" hidden>Nothing to do. Add your first task above.</p>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
